@@ -6,4 +6,4 @@ def is_prime(x):
       if x % n == 0:
         return False
     return True
-print is_prime(7)
+print(is_prime(7927))
