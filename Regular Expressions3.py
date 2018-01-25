@@ -22,13 +22,15 @@ string = '1234567890'
 good_numbers = re.findall(r'[^567]', string)
 
 
-line = re.search(r'''
+line = re.compile(r'''
     ^(?P<name>[-\w ]*,\s[-\w ]+)\t # Last and first name
     (?P<email>[-\w\d.+]+@[-\w\d.]+)\t # Email
     (?P<phone>\(?\d{3}\)?-?\s?\d{3}-\d{4})?\t # Phone
     (?P<job>[\w\s]+,\s[\w\s.]+)\t? # Job and company
     (?P<twitter>@[\w\d]+)?$ # Twitter
-''', data, re.X|re.M)
+''', re.X|re.M)
+print(line.search(data).groupdict())
+
 
 
 print(line)
