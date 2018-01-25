@@ -36,6 +36,7 @@ def numbers(int1, str1):
 \D : anything that isn't a number
 \b : word boundaries or edges of a word
 \B : anything that isn't the edge of a word
+\t : tab
 
 
 {3} : something that occurs exactly 3 times
