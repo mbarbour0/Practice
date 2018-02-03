@@ -8,6 +8,8 @@ seed_request = inventory[(inventory.location == 'Brooklyn') & (inventory.product
 inventory['in_stock'] = inventory.quantity.apply(lambda x: True if x > 0 else False)
 inventory['total_value'] = inventory.price * inventory.quantity
 
+inventory['full_description'] = inventory.apply(lambda row: '{} - {}'.format(row.product_type, row.product_description), axis = 1)
+
 """
 print(product_request)
 
