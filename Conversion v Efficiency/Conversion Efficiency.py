@@ -12,7 +12,7 @@ apt_1111 = pd.read_excel('October Appointments 11-11 to 11-20.xlsx')
 apt_1121 = pd.read_excel('October Appointments 11-21 to 11-30.xlsx')
 apt_121 = pd.read_excel('October Appointments 12-1 to 12-31.xlsx')
 
-apt = pd.concat(apt_101, apt_1022, apt_111, apt_1111, apt_1121, apt_121)
+apt = pd.concat([apt_101, apt_1022, apt_111, apt_1111, apt_1121, apt_121])
 
 # October Appointments 10-22 to 10-31
 # print(clt_cog.head())
