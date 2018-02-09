@@ -14,10 +14,12 @@ apt_121 = pd.read_excel('October Appointments 12-1 to 12-31.xlsx')
 
 apt = pd.concat([apt_101, apt_1022, apt_111, apt_1111, apt_1121, apt_121])
 
+count_by_agent = apt.groupby('Agent_Name').Textbox20.count().reset_index()
+
 # October Appointments 10-22 to 10-31
 # print(clt_cog.head())
 # print(ls_cog.head())
 # print(orl_cog.head())
 # print(twd_cog.head())
 
-print(apt.head())
+print(count_by_agent)
