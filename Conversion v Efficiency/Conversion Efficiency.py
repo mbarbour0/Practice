@@ -1,5 +1,6 @@
 import pandas as pd
 from matplotlib import pyplot as plt
+import openpyxl
 
 """
 clt_cog = pd.read_excel('clt cog.xlsx')
@@ -30,11 +31,32 @@ count_by_agent = pd.read_excel('count_by_agent.xlsx')
 print(count_by_agent)
 """
 
+"""
 print(clt_cog.head())
 print(ls_cog.head())
 print(orl_cog.head())
 print(twd_cog.head())
+"""
 
+urc = openpyxl.load_workbook('URC 10-15 to 12-7.xlsx')
+hours_logged = urc.get_sheet_by_name('Sheet1')
 
+def get_sec(time_str):
+    """Returns time in seconds"""
+    try:
+        h, m, s = time_str.split(':')
+        return int(h) * 3600 + int(m) * 60 + int(s)
+    except ValueError:
+        pass
 
+dict1 = {}
 
+for i in range(1, 500):
+    if hours_logged.cell(row = i + 1, column = 4).value != None:
+        e = str(hours_logged.cell(row = i + 9, column = 25).value)
+        eout = get_sec(e)
+        try:
+            result = round(((aout + bout + cout + dout) / (eout)) * 100, 2)
+        except TypeError:
+            continue
+        dict1[name] = result
