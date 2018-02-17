@@ -23,3 +23,5 @@ count_by_agent = apt.groupby('Agent_Name').Textbox20.count().reset_index()
 # print(twd_cog.head())
 
 print(count_by_agent)
+
+count_by_agent.to_csv('count_by_agent.csv', sep='\t', encoding='utf-8')
