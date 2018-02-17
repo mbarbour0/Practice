@@ -22,7 +22,7 @@ hours_worked.to_csv('hours_worked.csv', index=False)
 """
 
 hours_work_result = pd.read_csv('hours_worked.csv')
-print(hours_work_result.head())
+# print(hours_work_result.head())
 
 """
 apt_1015 = pd.read_excel('October Appointments 10-15 to 10-20.xlsx')
@@ -37,7 +37,7 @@ count_by_agent.to_csv('count_by_agent.csv', index=False)
 """
 
 count_by_agent = pd.read_excel('count_by_agent.xlsx')
-print(count_by_agent.head())
+# print(count_by_agent.head())
 
 """
 ranking = pd.read_excel('Rankings.xlsx')
@@ -46,8 +46,15 @@ conversion.to_csv('conversion.csv', index=False)
 print(conversion.head())
 """
 
+"""
 conversion_result = pd.read_csv('conversion.csv')
 print(conversion_result.head())
-
 conversion_v_hours = pd.merge(conversion_result, hours_work_result, how='left', left_on='Agent', right_on='Agent Name').reset_index()
 print(conversion_v_hours.head())
+conversion_v_hours_v_appointments = pd.merge(conversion_v_hours, count_by_agent, left_on='Agent', right_on='Agent_Name').reset_index()
+print(conversion_v_hours_v_appointments.head())
+conversion_v_hours_v_appointments.to_csv('conversion_v_hours_v_appointments.csv', index=False)
+"""
+
+con_hour_app = pd.read_csv('conversion_v_hours_v_appointments.csv')
+print(con_hour_app.head())
