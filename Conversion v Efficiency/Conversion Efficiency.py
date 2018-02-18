@@ -62,10 +62,13 @@ print(con_hour_app.head())
 
 con_hour_app.plot(kind='scatter', x="Conversion", y="Appointments")
 plt.tight_layout()
-plt.savefig('Conversion by Appointment.png')
+# plt.savefig('Conversion by Appointment.png')
 con_hour_app.plot(kind='scatter', x="Conversion", y="Hours", color='#ff7856')
 plt.tight_layout()
-plt.savefig('Conversion by Hours.png')
+# plt.savefig('Conversion by Hours.png')
+con_hour_app.plot(kind='scatter', x="Appointments", y="Hours", color='#56ff5e')
+plt.tight_layout()
+plt.savefig('Appointments by Hours.png')
 plt.show()
 
 
