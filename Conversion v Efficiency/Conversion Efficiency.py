@@ -60,15 +60,16 @@ conversion_v_hours_v_appointments.to_csv('conversion_v_hours_v_appointments.csv'
 con_hour_app = pd.read_csv('conversion_v_hours_v_appointments.csv')
 print(con_hour_app.head())
 
+"""
 con_hour_app.plot(kind='scatter', x="Conversion", y="Appointments")
 plt.tight_layout()
 # plt.savefig('Conversion by Appointment.png')
 con_hour_app.plot(kind='scatter', x="Conversion", y="Hours", color='#ff7856')
 plt.tight_layout()
 # plt.savefig('Conversion by Hours.png')
-con_hour_app.plot(kind='scatter', x="Appointments", y="Hours", color='#56ff5e')
+con_hour_app.plot(kind='scatter', x="Appointments", y="Hours", color='#42b73c')
 plt.tight_layout()
-plt.savefig('Appointments by Hours.png')
+# plt.savefig('Appointments by Hours.png')
 plt.show()
-
+"""
 
