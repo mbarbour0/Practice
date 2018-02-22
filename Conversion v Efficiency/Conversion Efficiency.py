@@ -25,7 +25,7 @@ hours_worked.to_csv('hours_worked.csv', index=False)
 hours_work_result = pd.read_csv('hours_worked.csv')
 # print(hours_work_result.head())
 
-"""
+
 apt_1015 = pd.read_excel('October Appointments 10-15 to 10-20.xlsx')
 apt_1022 = pd.read_excel('October Appointments 10-22 to 10-31.xlsx')
 apt_111 = pd.read_excel('October Appointments 11-1 to 11-10.xlsx')
@@ -35,7 +35,7 @@ apt_121 = pd.read_excel('October Appointments 12-1 to 12-7.xlsx')
 apt = pd.concat([apt_1015, apt_1022, apt_111, apt_1111, apt_1121, apt_121])
 count_by_agent = apt.groupby('Agent_Name').Textbox20.count().reset_index()
 count_by_agent.to_csv('count_by_agent.csv', index=False)
-"""
+
 
 count_by_agent = pd.read_excel('count_by_agent.xlsx')
 # print(count_by_agent.head())
@@ -57,8 +57,10 @@ print(conversion_v_hours_v_appointments.head())
 conversion_v_hours_v_appointments.to_csv('conversion_v_hours_v_appointments.csv', index=False)
 """
 
+"""
 con_hour_app = pd.read_csv('conversion_v_hours_v_appointments.csv')
 print(con_hour_app.head())
+"""
 
 """
 con_hour_app.plot(kind='scatter', x="Conversion", y="Appointments")
