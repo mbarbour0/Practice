@@ -27,15 +27,15 @@ hours_worked.to_csv('hours_worked.csv', index=False) """
 
 
 # Reading Appointment Reports, Concatonating, and Writing to CSV
-""" apt_1015 = pd.read_excel('October Appointments 10-15 to 10-20.xlsx')
+apt_1015 = pd.read_excel('October Appointments 10-15 to 10-20.xlsx')
 apt_1022 = pd.read_excel('October Appointments 10-22 to 10-31.xlsx')
 apt_111 = pd.read_excel('October Appointments 11-1 to 11-10.xlsx')
 apt_1111 = pd.read_excel('October Appointments 11-11 to 11-20.xlsx')
 apt_1121 = pd.read_excel('October Appointments 11-21 to 11-30.xlsx')
 apt_121 = pd.read_excel('October Appointments 12-1 to 12-7.xlsx')
 apt = pd.concat([apt_1015, apt_1022, apt_111, apt_1111, apt_1121, apt_121])
-count_by_agent = apt.groupby('Agent_Name').Textbox20.count().reset_index()
-count_by_agent.to_csv('count_by_agent.csv', index=False) """
+count_by_agent = apt.groupby(['Agent_Location', 'Agent_Name']).Textbox20.count().reset_index()
+count_by_agent.to_csv('count_by_agent_location.csv', index=False)
 
 # Reading Count by Agent
 """ count_by_agent = pd.read_excel('count_by_agent.xlsx')
@@ -57,11 +57,11 @@ print(conversion_v_hours_v_appointments.head())
 conversion_v_hours_v_appointments.to_csv('conversion_v_hours_v_appointments.csv', index=False) """
 
 # Run After Updating Conversion v Hours v Appointments
-con_hour_app = pd.read_csv('conversion_v_hours_v_appointments.csv')
-print(con_hour_app.head())
+"""con_hour_app = pd.read_csv('conversion_v_hours_v_appointments.csv')
+print(con_hour_app.head())"""
 
 # Plotting
-con_hour_app.plot(kind='scatter', x="Conversion", y="Appointments")
+"""con_hour_app.plot(kind='scatter', x="Conversion", y="Appointments")
 plt.tight_layout()
 plt.savefig('Conversion by Appointment.png')
 
@@ -73,3 +73,4 @@ con_hour_app.plot(kind='scatter', x="Appointments", y="Hours", color='#42b73c')
 plt.tight_layout()
 plt.savefig('Appointments by Hours.png')
 plt.show()
+"""
